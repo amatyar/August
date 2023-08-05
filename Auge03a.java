@@ -44,9 +44,10 @@ public class Auge03a
 		subjects.put("Computer", "programming");
 		
 		System.out.println(subjects);
+		
 		System.out.println(subjects.get("Math"));
 		
-		// loop 
+		// loop foreach
 		for(String book : subjects.keySet())
 		{
 			System.out.println(book +"\t" +subjects.get(book));
