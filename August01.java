@@ -10,7 +10,7 @@ public class August01
 	{
 
 		ArrayList<String> lang = new ArrayList<String>(Arrays.asList("Java", "Python", "C#", "C++","Noge.js"));
-		System.out.println("ArrayList" + lang);
+		System.out.println("ArrayList01" + lang);
 		for(int i = 0; i < lang.size(); i++)
 		{
 			//System.out.println(lang.size());

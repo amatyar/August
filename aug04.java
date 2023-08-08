@@ -21,7 +21,7 @@ public class aug04 {
 		clist.stream().forEach(cre -> cre.dispalyRaise(2));
 		for(int i =0 ; i < cr.length; i++)
 		{
-			System.out.println(cr[i].C_Salary);
+			System.out.println(cr[i].C_Name);
 		}
 
 	}
