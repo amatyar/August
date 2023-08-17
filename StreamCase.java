@@ -3,6 +3,7 @@ package August;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamCase {
 
@@ -23,9 +24,10 @@ public class StreamCase {
         System.out.println("********1**********");
       
         List<Employee> clist= Arrays.asList(empList);
-//        List<String> abd = (List<String>) clist.stream().filter(e -> e.getGender().equals("Female"));
-//        System.out.println(abd);
-     
+       List<Employee> abd = (clist.stream().filter(e -> e.getGender().equals("Female")).toList());
+       System.out.println(abd);
+        
+        System.out.println(clist.get(0));
         System.out.println(clist.stream().filter(e -> e.getGender().equals("Female")));
         System.out.println("********2**********");
         //method reference//forEach(System.out::println);
@@ -34,6 +36,11 @@ public class StreamCase {
         		{
         			System.out.println(e);
         			});
+        List<Employee> females = Arrays.stream(empList)
+        	    .filter(e -> e.getGender().equalsIgnoreCase("Female"))
+        	    .collect(Collectors.toList());
+        System.out.println(females);
+
         System.out.println("********3**********");
         
         clist.stream().filter(e -> e.getNewJoiner().equals("True")).forEach(e -> System.out.println(e));
@@ -44,6 +51,11 @@ public class StreamCase {
         //Match method
         boolean sl = clist.stream().allMatch(e -> e.getSalary() > 1000);
         System.out.println(sl);
+        
+        List<Employee> sortedBySalary = Arrays.stream(empList)
+        	    .sorted(Comparator.comparingInt(Employee::getSalary))
+        	    .collect(Collectors.toList());
+        System.out.println(sortedBySalary);
 }
        
 	
@@ -70,7 +82,20 @@ class Employee {
 		 this.salary = i;
 		 this.rating = j;
 	 }
-	 
+	 public String getFirstName()
+	 {
+		 return this.firstName;
+	 }
+	 public void setFirstName(String fn){
+		 this.firstName = fn;
+	 } 
+	 public String getLastName()
+	 {
+		 return this.lastName;
+	 }
+	 public void setLastName(String ln){
+		 this.lastName = ln;
+	 }
 	 public String getGender()
 	 {
 		 return this.gender;
@@ -100,6 +125,13 @@ class Employee {
 	 public void getEmpList()
 	 {
 		System.out.println(this.empId +this.firstName+this.lastName+this.email+this.gender+this.newJoiner+this.salary+this.rating);
+	 }
+	 public String DisplayString()
+	 {
+		 return "Employee: " + firstName+ " " + lastName+
+				 ", Gender: " + gender +", New Joiner: " + newJoiner +
+	                ", Salary: " + salary +
+	                ", Rating: " + rating;
 	 }
 }
 

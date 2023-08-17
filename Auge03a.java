@@ -42,11 +42,11 @@ public class Auge03a
 		Map<String, String> subjects = new HashMap<String, String>();
 		subjects.put("Math", "Calculas");
 		subjects.put("Computer", "programming");
-		
+		System.out.println("----1---");
 		System.out.println(subjects);
-		
+		System.out.println("---2----");
 		System.out.println(subjects.get("Math"));
-		
+		System.out.println("---3----");
 		// loop foreach
 		for(String book : subjects.keySet())
 		{

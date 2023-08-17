@@ -2,6 +2,7 @@ package August;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.stream.Stream;
@@ -93,17 +94,26 @@ public class Augest7 {
 		System.out.println(countries.stream().map(x -> x.toUpperCase()).toList());
 		
 		
-		List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+		List<Integer> numbers = Arrays.asList(2, 3, 5, 7, 11, 13, 117, 19, 23, 29);
 		System.out.println(numbers.stream().map(x -> x * 2).toList());
 		
 		List<Integer> salary = Arrays.asList(6000,6000,6500,56777,9000);
 		System.out.println(numbers.stream().map(x -> x * 2).toList());
 		
 		System.out.println(salary.stream().map(x -> x + x * 0.10).toList());
-		
-		
+		System.out.println("**********");
+		Integer var = numbers.stream().max(Integer::compare).get();
+		System.out.println(var);
+		System.out.println("**********");
 		// Define a array list and loop over it 
 		// Define a hashmap and loop over it 
+		
+		 
+		 IntSummaryStatistics stats = numbers.stream().mapToInt((x) -> x).summaryStatistics(); 
+		 System.out.println("Highest prime number in List : " + stats.getMax()); 
+		 System.out.println("Lowest prime number in List : " + stats.getMin());
+		 System.out.println("Sum of all prime numbers : " + stats.getSum()); 
+		 System.out.println("Average of all prime numbers : " + stats.getAverage());
 
 	}
 

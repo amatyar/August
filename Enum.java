@@ -4,9 +4,6 @@ import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.stream.Stream;
 
-/*
- * @author Rabindra
- */
 public class Enum 
 {
 	public static void main(String[] args) 
@@ -19,7 +16,7 @@ public class Enum
 			System.out.println(day);
 		}
 		System.out.println("\n**88Next Case88**\n");
-		//using foreach loop
+		//using for each loop
 		EnumSet.allOf(Days.class).forEach(day -> System.out.println(day));
 		
 		System.out.println("\n**88Next Case88**\n");
